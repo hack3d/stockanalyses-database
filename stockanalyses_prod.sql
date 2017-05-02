@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `stockanalyses_prod` /*!40100 DEFAULT CHARACTER S
 USE `stockanalyses_prod`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: stockanalyses_v2
+-- Host: localhost    Database: stockanalyses_prod
 -- ------------------------------------------------------
 -- Server version	5.7.17-0ubuntu0.16.04.1
 
@@ -122,7 +122,7 @@ CREATE TABLE `currency_now` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_v2`.`currency_now_AFTER_INSERT` AFTER INSERT ON `currency_now` FOR EACH ROW
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`currency_now_AFTER_INSERT` AFTER INSERT ON `currency_now` FOR EACH ROW
 BEGIN
 	declare v_base varchar(4);
     declare v_quote varchar(4);
@@ -172,7 +172,7 @@ CREATE TABLE `downloader_jq` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_v2`.`downloader_jq_AFTER_UPDATE` AFTER UPDATE ON `downloader_jq` FOR EACH ROW
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`downloader_jq_AFTER_UPDATE` AFTER UPDATE ON `downloader_jq` FOR EACH ROW
 BEGIN
 	declare v_message varchar(255);
 	declare v_exchange varchar(45);
@@ -314,7 +314,7 @@ CREATE TABLE `import_jq` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_v2`.`import_jq_AFTER_INSERT` AFTER INSERT ON `import_jq` FOR EACH ROW
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`import_jq_AFTER_INSERT` AFTER INSERT ON `import_jq` FOR EACH ROW
 BEGIN
 	declare v_action int;
     declare v_message varchar(255);
@@ -447,8 +447,8 @@ CREATE TABLE `portfolio_head` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_v2`.`portfolio_log_AFTER_INSERT`
-AFTER INSERT ON `stockanalyses_v2`.`portfolio_head`
+/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_log_AFTER_INSERT`
+AFTER INSERT ON `stockanalyses_prod`.`portfolio_head`
 FOR EACH ROW
 BEGIN
 	set @type = (select type.idtype from type where type.type_name = 'add');
@@ -524,8 +524,8 @@ CREATE TABLE `portfolio_pos` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_v2`.`portfolio_pos_AFTER_INSERT`
-AFTER INSERT ON `stockanalyses_v2`.`portfolio_pos`
+/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_pos_AFTER_INSERT`
+AFTER INSERT ON `stockanalyses_prod`.`portfolio_pos`
 FOR EACH ROW
 BEGIN
 
@@ -582,8 +582,8 @@ CREATE TABLE `portfolio_setting` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_v2`.`portfolio_setting_AFTER_INSERT`
-AFTER INSERT ON `stockanalyses_v2`.`portfolio_setting`
+/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_setting_AFTER_INSERT`
+AFTER INSERT ON `stockanalyses_prod`.`portfolio_setting`
 FOR EACH ROW
 BEGIN
 
@@ -595,7 +595,7 @@ BEGIN
 
     set @portfolioname = (select portfolioname from portfolio_head where portfolio_head.portfolio_head_id = new.portfolio_head);
 
-    /* das wertpapier oder w√§hrung wird ermittelt */
+    /* das wertpapier oder w‰hrung wird ermittelt */
 
     set @portfolio_pos_value = (select portfolio_pos.value from portfolio_pos where portfolio_pos.portfolio_pos_id = portfolio_pos);
 
@@ -613,7 +613,7 @@ BEGIN
 
 	/****************************************************************
 
-     * je nachdem welche einstellung eingef√ºgt wird zus√§tzlich noch
+     * je nachdem welche einstellung eingef¸gt wird zus‰tzlich noch
 
      * ein eintrag in die advice queue angelegt.
 
@@ -670,8 +670,8 @@ CREATE TABLE `stock` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_v2`.`stock_AINS`
-AFTER INSERT ON `stockanalyses_v2`.`stock`
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`stock_AINS`
+AFTER INSERT ON `stockanalyses_prod`.`stock`
 FOR EACH ROW
 Begin
 	insert into downloader_jq(action, id_stock, state, timestamp) values('1000', NEW.stock_id, 0, now()), ('2100', New.stock_id, 0, now()), ('3100', New.stock_id, 0, now());

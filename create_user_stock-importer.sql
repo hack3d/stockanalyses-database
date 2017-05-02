@@ -1,0 +1,2 @@
+GRANT SELECT,INSERT,UPDATE,DELETE,EXECUTE,SHOW VIEW on stockanalyses_prod.* TO 'stock-importer'@'%' IDENTIFIED BY 'Stock-2017!';
+FLUSH PRIVILEGES;
