@@ -1,4 +1,4 @@
-use database stockanalyses_prod;
+use stockanalyses_prod;
 
 --
 -- Dumping data for table `currency`
@@ -28,7 +28,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `exchange` WRITE;
 /*!40000 ALTER TABLE `exchange` DISABLE KEYS */;
-INSERT INTO `exchange` VALUES (1,'Börse Frankfurt','XFRA','DEU',0,'2017-05-06 13:34:36','admin','2017-05-06 13:34:36','admin'),(2,'Bitstamp Ltd.','bitstamp','GBR',5,'2017-05-06 13:34:36','admin','2017-05-06 13:34:36','admin');
+INSERT INTO `exchange` VALUES (1,'Bï¿½rse Frankfurt','XFRA','DEU',0,'2017-05-06 13:34:36','admin','2017-05-06 13:34:36','admin'),(2,'Bitstamp Ltd.','bitstamp','GBR',5,'2017-05-06 13:34:36','admin','2017-05-06 13:34:36','admin');
 /*!40000 ALTER TABLE `exchange` ENABLE KEYS */;
 UNLOCK TABLES;
 

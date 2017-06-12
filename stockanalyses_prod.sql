@@ -21,7 +21,6 @@ USE `stockanalyses_prod`;
 -- Table structure for table `advice_queue`
 --
 
-DROP TABLE IF EXISTS `advice_queue`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `advice_queue` (
@@ -47,7 +46,6 @@ CREATE TABLE `advice_queue` (
 -- Table structure for table `country`
 --
 
-DROP TABLE IF EXISTS `country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `country` (
@@ -65,7 +63,6 @@ CREATE TABLE `country` (
 -- Table structure for table `currency`
 --
 
-DROP TABLE IF EXISTS `currency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `currency` (
@@ -86,7 +83,6 @@ CREATE TABLE `currency` (
 -- Table structure for table `currency_now`
 --
 
-DROP TABLE IF EXISTS `currency_now`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `currency_now` (
@@ -122,7 +118,7 @@ CREATE TABLE `currency_now` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`currency_now_AFTER_INSERT` AFTER INSERT ON `currency_now` FOR EACH ROW
+/*!50003 CREATE*/ /*!50003 TRIGGER `stockanalyses_prod`.`currency_now_AFTER_INSERT` AFTER INSERT ON `currency_now` FOR EACH ROW
 BEGIN
 	declare v_base varchar(4);
     declare v_quote varchar(4);
@@ -145,7 +141,6 @@ DELIMITER ;
 -- Table structure for table `downloader_jq`
 --
 
-DROP TABLE IF EXISTS `downloader_jq`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `downloader_jq` (
@@ -172,7 +167,7 @@ CREATE TABLE `downloader_jq` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`downloader_jq_AFTER_UPDATE` AFTER UPDATE ON `downloader_jq` FOR EACH ROW
+/*!50003 CREATE*/ /*!50003 TRIGGER `stockanalyses_prod`.`downloader_jq_AFTER_UPDATE` AFTER UPDATE ON `downloader_jq` FOR EACH ROW
 BEGIN
 	declare v_message varchar(255);
 	declare v_exchange varchar(45);
@@ -201,7 +196,6 @@ DELIMITER ;
 -- Table structure for table `email_queue`
 --
 
-DROP TABLE IF EXISTS `email_queue`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `email_queue` (
@@ -224,7 +218,6 @@ CREATE TABLE `email_queue` (
 -- Table structure for table `exchange`
 --
 
-DROP TABLE IF EXISTS `exchange`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `exchange` (
@@ -246,7 +239,6 @@ CREATE TABLE `exchange` (
 -- Table structure for table `exchange_holidays`
 --
 
-DROP TABLE IF EXISTS `exchange_holidays`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `exchange_holidays` (
@@ -267,7 +259,6 @@ CREATE TABLE `exchange_holidays` (
 -- Table structure for table `exchange_time`
 --
 
-DROP TABLE IF EXISTS `exchange_time`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `exchange_time` (
@@ -290,7 +281,6 @@ CREATE TABLE `exchange_time` (
 -- Table structure for table `import_jq`
 --
 
-DROP TABLE IF EXISTS `import_jq`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `import_jq` (
@@ -314,7 +304,7 @@ CREATE TABLE `import_jq` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`import_jq_AFTER_INSERT` AFTER INSERT ON `import_jq` FOR EACH ROW
+/*!50003 CREATE*/ /*!50003 TRIGGER `stockanalyses_prod`.`import_jq_AFTER_INSERT` AFTER INSERT ON `import_jq` FOR EACH ROW
 BEGIN
 	declare v_action int;
     declare v_message varchar(255);
@@ -355,7 +345,6 @@ DELIMITER ;
 -- Table structure for table `index_world`
 --
 
-DROP TABLE IF EXISTS `index_world`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `index_world` (
@@ -374,7 +363,6 @@ CREATE TABLE `index_world` (
 -- Table structure for table `indicator_jq`
 --
 
-DROP TABLE IF EXISTS `indicator_jq`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `indicator_jq` (
@@ -396,7 +384,6 @@ CREATE TABLE `indicator_jq` (
 -- Table structure for table `log`
 --
 
-DROP TABLE IF EXISTS `log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `log` (
@@ -414,7 +401,6 @@ CREATE TABLE `log` (
 -- Table structure for table `portfolio_head`
 --
 
-DROP TABLE IF EXISTS `portfolio_head`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `portfolio_head` (
@@ -447,7 +433,7 @@ CREATE TABLE `portfolio_head` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_log_AFTER_INSERT`
+/*!50003 CREATE*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_log_AFTER_INSERT`
 AFTER INSERT ON `stockanalyses_prod`.`portfolio_head`
 FOR EACH ROW
 BEGIN
@@ -466,7 +452,6 @@ DELIMITER ;
 -- Table structure for table `portfolio_log`
 --
 
-DROP TABLE IF EXISTS `portfolio_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `portfolio_log` (
@@ -491,7 +476,6 @@ CREATE TABLE `portfolio_log` (
 -- Table structure for table `portfolio_pos`
 --
 
-DROP TABLE IF EXISTS `portfolio_pos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `portfolio_pos` (
@@ -524,7 +508,7 @@ CREATE TABLE `portfolio_pos` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_pos_AFTER_INSERT`
+/*!50003 CREATE*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_pos_AFTER_INSERT`
 AFTER INSERT ON `stockanalyses_prod`.`portfolio_pos`
 FOR EACH ROW
 BEGIN
@@ -550,7 +534,6 @@ DELIMITER ;
 -- Table structure for table `portfolio_setting`
 --
 
-DROP TABLE IF EXISTS `portfolio_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `portfolio_setting` (
@@ -582,7 +565,7 @@ CREATE TABLE `portfolio_setting` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`admin`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_setting_AFTER_INSERT`
+/*!50003 CREATE*/ /*!50003 TRIGGER `stockanalyses_prod`.`portfolio_setting_AFTER_INSERT`
 AFTER INSERT ON `stockanalyses_prod`.`portfolio_setting`
 FOR EACH ROW
 BEGIN
@@ -595,7 +578,7 @@ BEGIN
 
     set @portfolioname = (select portfolioname from portfolio_head where portfolio_head.portfolio_head_id = new.portfolio_head);
 
-    /* das wertpapier oder währung wird ermittelt */
+    /* das wertpapier oder wï¿½hrung wird ermittelt */
 
     set @portfolio_pos_value = (select portfolio_pos.value from portfolio_pos where portfolio_pos.portfolio_pos_id = portfolio_pos);
 
@@ -613,7 +596,7 @@ BEGIN
 
 	/****************************************************************
 
-     * je nachdem welche einstellung eingefügt wird zusätzlich noch
+     * je nachdem welche einstellung eingefï¿½gt wird zusï¿½tzlich noch
 
      * ein eintrag in die advice queue angelegt.
 
@@ -638,7 +621,6 @@ DELIMITER ;
 -- Table structure for table `stock`
 --
 
-DROP TABLE IF EXISTS `stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stock` (
@@ -670,7 +652,7 @@ CREATE TABLE `stock` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `stockanalyses_prod`.`stock_AINS`
+/*!50003 CREATE*/ /*!50003 TRIGGER `stockanalyses_prod`.`stock_AINS`
 AFTER INSERT ON `stockanalyses_prod`.`stock`
 FOR EACH ROW
 Begin
@@ -686,7 +668,6 @@ DELIMITER ;
 -- Table structure for table `stock_current`
 --
 
-DROP TABLE IF EXISTS `stock_current`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stock_current` (
@@ -708,7 +689,6 @@ CREATE TABLE `stock_current` (
 -- Table structure for table `stock_daily`
 --
 
-DROP TABLE IF EXISTS `stock_daily`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stock_daily` (
@@ -732,7 +712,6 @@ CREATE TABLE `stock_daily` (
 -- Table structure for table `stock_weekly`
 --
 
-DROP TABLE IF EXISTS `stock_weekly`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stock_weekly` (
@@ -756,7 +735,6 @@ CREATE TABLE `stock_weekly` (
 -- Table structure for table `trade_fee`
 --
 
-DROP TABLE IF EXISTS `trade_fee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `trade_fee` (
@@ -783,7 +761,6 @@ CREATE TABLE `trade_fee` (
 -- Table structure for table `trade_log`
 --
 
-DROP TABLE IF EXISTS `trade_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `trade_log` (
@@ -813,7 +790,6 @@ CREATE TABLE `trade_log` (
 -- Table structure for table `trade_queue`
 --
 
-DROP TABLE IF EXISTS `trade_queue`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `trade_queue` (
@@ -834,7 +810,6 @@ CREATE TABLE `trade_queue` (
 -- Table structure for table `trend`
 --
 
-DROP TABLE IF EXISTS `trend`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `trend` (
@@ -860,7 +835,6 @@ CREATE TABLE `trend` (
 -- Table structure for table `type`
 --
 
-DROP TABLE IF EXISTS `type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `type` (
@@ -878,7 +852,6 @@ CREATE TABLE `type` (
 -- Table structure for table `user_action`
 --
 
-DROP TABLE IF EXISTS `user_action`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_action` (
@@ -900,7 +873,6 @@ CREATE TABLE `user_action` (
 -- Table structure for table `user_activation`
 --
 
-DROP TABLE IF EXISTS `user_activation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_activation` (
@@ -922,7 +894,6 @@ CREATE TABLE `user_activation` (
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
@@ -949,7 +920,7 @@ CREATE TABLE `users` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `users_AINS` AFTER INSERT ON `users` FOR EACH ROW
+/*!50003 CREATE*/ /*!50003 TRIGGER `users_AINS` AFTER INSERT ON `users` FOR EACH ROW
 begin
 set @activation_code = (select left(uuid(), 10));
 insert into 
@@ -1074,7 +1045,7 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`admin`@`localhost` PROCEDURE `sp_insert_advice_queue`(IN `portfolio_head` INT, IN `portfolio_pos` INT, IN `portfolio_setting_name` INT, IN `insert_user` INT)
+CREATE PROCEDURE `sp_insert_advice_queue`(IN `portfolio_head` INT, IN `portfolio_pos` INT, IN `portfolio_setting_name` INT, IN `insert_user` INT)
     NO SQL
 BEGIN
 
@@ -1112,7 +1083,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_log`(IN kennung varchar(45), IN log_message text, IN insert_user varchar(200))
+CREATE PROCEDURE `sp_insert_log`(IN kennung varchar(45), IN log_message text, IN insert_user varchar(200))
 BEGIN
 	insert into
 	log (kennung, log_message, insert_timestamp, insert_user)
@@ -1133,7 +1104,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_trade_log`(IN value_type int, IN value varchar(45), IN price_insert decimal(10,0), IN price_traded decimal(10,0), IN amount double, IN exchange int, IN state int, IN insert_user int)
+CREATE PROCEDURE `sp_insert_trade_log`(IN value_type int, IN value varchar(45), IN price_insert decimal(10,0), IN price_traded decimal(10,0), IN amount double, IN exchange int, IN state int, IN insert_user int)
 BEGIN
 	insert into trade_log
 	(value_type, value, price_insert, price_traded, amount, exchange, state, insert_timestamp, insert_user)
@@ -1158,7 +1129,6 @@ DELIMITER ;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`admin`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_advice_jq` AS select `advice_queue`.`portfolio_pos` AS `portfolio_pos`,`portfolio_pos`.`value` AS `pos_value`,`portfolio_setting`.`setting_name` AS `setting_name`,`portfolio_setting`.`value` AS `setting_value` from (((`advice_queue` join `portfolio_pos` on((`advice_queue`.`portfolio_pos` = `portfolio_pos`.`portfolio_pos_id`))) join `portfolio_setting` on((`portfolio_pos`.`portfolio_pos_id` = `portfolio_setting`.`portfolio_pos`))) join `type` on((`advice_queue`.`state` = `type`.`idtype`))) where ((1 = 1) and (`type`.`type_name` <> 'error') and (`advice_queue`.`timestamp` < now()) and (`portfolio_setting`.`setting_name` in ('dema','macd','rsi'))) order by `advice_queue`.`timestamp`,`portfolio_pos`.`value` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -1176,7 +1146,6 @@ DELIMITER ;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`aws_stock`@`%` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_downloader_jq` AS select `djq`.`action` AS `action`,`stock`.`yahoo_name` AS `yahoo_name`,`djq`.`timestamp` AS `timestamp`,`ext`.`open_exchange` AS `open_exchange`,`ext`.`close_exchange` AS `close_exchange`,`stock`.`stock_id` AS `stock_id` from ((`stock` join `downloader_jq` `djq` on((`djq`.`value` = `stock`.`stock_id`))) join `exchange_time` `ext` on((`ext`.`exchange_time_id` = `stock`.`id_exchange_time`))) where (`djq`.`state` = 0) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -1194,7 +1163,6 @@ DELIMITER ;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_indicator_jq` AS select `ijq`.`action` AS `action`,`ijq`.`value` AS `value`,`ijq`.`timestamp` AS `timestamp`,`ijq`.`state` AS `state` from `indicator_jq` `ijq` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -1212,7 +1180,6 @@ DELIMITER ;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`admin`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_stock_daily` AS select `stock_daily`.`stock_daily_id` AS `stock_daily_id`,`stock_daily`.`date` AS `date`,`stock_daily`.`open` AS `open`,`stock_daily`.`high` AS `high`,`stock_daily`.`low` AS `low`,`stock_daily`.`close` AS `close`,`stock_daily`.`volume` AS `volume`,`stock_daily`.`adj_close` AS `adj_close`,`stock_daily`.`id_stock` AS `id_stock`,`stock_daily`.`insert_timestamp` AS `insert_timestamp`,`stock`.`stock_id` AS `stock_id`,`stock`.`name` AS `name`,`stock`.`yahoo_name` AS `yahoo_name`,`stock`.`isin` AS `isin`,`stock`.`id_index_world` AS `id_index_world`,`stock`.`id_exchange_time` AS `id_exchange_time`,`stock`.`historical_data` AS `historical_data`,`stock`.`state` AS `state`,`stock`.`insert_timestamp` AS `st_insert_timestamp`,`stock`.`insert_user` AS `insert_user`,`stock`.`modify_timestamp` AS `modify_timestamp`,`stock`.`modify_user` AS `modify_user` from (`stock_daily` join `stock` on((`stock_daily`.`id_stock` = `stock`.`stock_id`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -1230,7 +1197,6 @@ DELIMITER ;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_trade_queue` AS select `pp`.`value` AS `value`,`pp`.`quantity` AS `quantity`,`pp`.`price` AS `price`,`pp`.`exchange` AS `exchange` from (`trade_queue` `tq` join `portfolio_pos` `pp` on((`tq`.`portfolio_pos` = `pp`.`portfolio_pos_id`))) where ((1 = 1) and (`tq`.`timestamp` <= now())) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
