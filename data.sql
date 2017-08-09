@@ -1,24 +1,19 @@
 use stockanalyses_prod;
 
+
 --
 -- Dumping data for table `type`
 --
 
-LOCK TABLES `type` WRITE;
-/*!40000 ALTER TABLE `type` DISABLE KEYS */;
 INSERT INTO `type` VALUES
 (1,'stock', now(),'admin',now(),'admin'),
 (2,'crypto_currency',now(),'admin',now(),'admin');
-/*!40000 ALTER TABLE `type` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 --
 -- Dumping data for table `currency`
 --
 
-LOCK TABLES `currency` WRITE;
-/*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` VALUES
 (1,'Euro','EUR',1,0,now(),'admin',now(),'admin'),
 (2,'Argentine peso','ARS',1,0,now(),'admin',now(),'admin'),
@@ -57,33 +52,23 @@ INSERT INTO `currency` VALUES
 (35,'South African rand','ZAR',1,0,now(),'admin',now(),'admin'),
 (36,'South Korean won','KRW',1,0,now(),'admin',now(),'admin'),
 (37,'Namecoin','NMC',1,0,now(),'admin',now(),'admin');
-/*!40000 ALTER TABLE `currency` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 --
 -- Dumping data for table `downloader_jq`
 --
 
-LOCK TABLES `downloader_jq` WRITE;
-/*!40000 ALTER TABLE `downloader_jq` DISABLE KEYS */;
 INSERT INTO `downloader_jq` VALUES
 (1000,'bitstamp#btc#eur',2,0,now(),now(),'admin',now(),'admin');
-/*!40000 ALTER TABLE `downloader_jq` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 --
 -- Dumping data for table `exchange`
 --
 
-LOCK TABLES `exchange` WRITE;
-/*!40000 ALTER TABLE `exchange` DISABLE KEYS */;
 INSERT INTO `exchange` VALUES
 (1,'B�rse Frankfurt','XFRA','DEU',0,now(),'admin',now(),'admin'),
 (2,'Bitstamp Ltd.','bitstamp','GBR',5,now(),'admin',now(),'admin');
-/*!40000 ALTER TABLE `exchange` ENABLE KEYS */;
-UNLOCK TABLES
 
 
 
@@ -91,9 +76,6 @@ UNLOCK TABLES
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
 (1, 'admin', '', '2', '123456', 'DEU', '3', now(), 'admin', now(), 'admin');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES
+
