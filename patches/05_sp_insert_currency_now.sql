@@ -3,7 +3,7 @@ DROP procedure IF EXISTS `sp_insert_currency_now`;
 
 DELIMITER $$
 USE `stockanalyses_prod`$$
-CREATE PROCEDURE `sp_insert_currency_now` (OUT sp_result int, IN sp_base varchar(20), IN sp_quote varchar(20), IN sp_high decimal(8,2), IN sp_volume decimal(12,8), IN sp_datetime datetime, IN sp_bid decimal(8,2), IN sp_ask decimal(8,2), IN sp_vwap decimal(8,2), IN sp_low decimal(8,2), IN sp_exchange int, IN sp_user varchar(200))
+CREATE PROCEDURE `sp_insert_currency_now` (OUT sp_result int, IN sp_base varchar(20), IN sp_quote varchar(20), IN sp_high decimal(8,2), IN sp_volume decimal(12,8), IN sp_datetime datetime, IN sp_bid decimal(8,2), IN sp_ask decimal(8,2), IN sp_vwap decimal(8,2), IN sp_low decimal(8,2), IN sp_exchange int, IN sp_last decimal(8,2), IN sp_user varchar(200))
 BEGIN
     -- ------------------------------------------------------------
     -- ------------------------------------------------------------
@@ -16,6 +16,7 @@ BEGIN
     --  Description : We insert log entries, after insert some tickdata for currencies
     --
     --  08.08.2017  : Created
+    --  16.08.2017  : Add paramter 'sp_last' for latest price.
     --
     -- ------------------------------------------------------------
     -- ------------------------------------------------------------
@@ -34,8 +35,8 @@ BEGIN
         END;
 
 
-	insert into currency_now(`base_currency`, `quote_currency`, `high`, `volume`, `latest_trade`, `bid`, `ask`, `currency_volume`, `low`, `exchange_idexchange`, `insert_timestamp`, `insert_user`)
-    values (sp_base, sp_quote, sp_high, sp_volume, sp_datetime, sp_bid, sp_ask, sp_vwap, sp_low, sp_exchange, now(), sp_user);
+	insert into currency_now(`base_currency`, `quote_currency`, `high`, `volume`, `latest_trade`, `bid`, `ask`, `currency_volume`, `low`, `exchange_idexchange`, `last`, `insert_timestamp`, `insert_user`)
+    values (sp_base, sp_quote, sp_high, sp_volume, sp_datetime, sp_bid, sp_ask, sp_vwap, sp_low, sp_exchange, sp_last, now(), sp_user);
 
 	-- check whether the insert was successful
     IF code = '00000' THEN

@@ -9,6 +9,9 @@ General: Every recognition starts with a letter. This letter specify a job.
 | D | Downloader for several stock and currency data. |
 | I | Is responsible to import all the downloaded data correctly. |
 | E | All errors in database log will start with this letter. |
+| M | Mail |
+| U | Users |
+| P | Portfolio |
 
 
 | Recoginition | Description |
@@ -24,3 +27,13 @@ General: Every recognition starts with a letter. This letter specify a job.
 | E1001 | Insert into import_jq didn't work. |
 | E1002 | Update of job for import_jq didn't work. |
 | E1003 | Insert of new dataset into table 'currency_now' didn't work. |
+| E1004 | Something went wrong to insert a new user. |
+| E1005 | Update of job for email_queue didn't work. |
+| E1006 | User could not approved. |
+| E1007 | Email for successfully activation could not generated. |
+| E1008 | It's not possible to add a portfolio. |
+| U1000 | Insert a new user. |
+| U1001 | Approve user. |
+| U1002 | Approved user get a mail. |
+| M1000 | Update email_queue job. |
+| P1000 | Add a portfolio for an user. |
