@@ -5,7 +5,7 @@ We have to run the command as follow: `sudo ./run.sh <mysql-user> <mysql-passwor
 ## Logging
 General: Every recognition starts with a letter. This letter specify a job.
 | Letter | Job |
-----------------
+| ------ | --- |
 | D | Downloader for several stock and currency data. |
 | I | Is responsible to import all the downloaded data correctly. |
 | E | All errors in database log will start with this letter. |
@@ -15,7 +15,7 @@ General: Every recognition starts with a letter. This letter specify a job.
 
 
 | Recoginition | Description |
--------------------------------
+| ------------ | ----------- |
 | I1000 | Reset the downloader job |
 | I1001 | The exchange has no interval. So we didn't create a new job. |
 | I1002 | Insert new dataset to table 'currency_now'. |
