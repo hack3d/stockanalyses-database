@@ -4,6 +4,7 @@ We have to run the command as follow: `sudo ./run.sh <mysql-user> <mysql-passwor
 
 ## Logging
 General: Every recognition starts with a letter. This letter specify a job.
+
 | Letter | Job |
 | ------ | --- |
 | D | Downloader for several stock and currency data. |
@@ -11,7 +12,7 @@ General: Every recognition starts with a letter. This letter specify a job.
 | E | All errors in database log will start with this letter. |
 | M | Mail |
 | U | Users |
-| P | Portfolio |
+| P | Portfoliomanagement |
 
 
 | Recoginition | Description |
