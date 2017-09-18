@@ -10,10 +10,14 @@ General: Every recognition starts with a letter. This letter specify a job.
 | D | Downloader for several stock and currency data. |
 | I | Is responsible to import all the downloaded data correctly. |
 | E | All errors in database log will start with this letter. |
+| W | Warnings for the application. |
 | M | Mail |
 | U | Users |
 | P | Portfoliomanagement |
+| X | Exchange |
 
+
+Possible codes at the logging table 'log':
 
 | Recoginition | Description |
 | ------------ | ----------- |
@@ -33,8 +37,16 @@ General: Every recognition starts with a letter. This letter specify a job.
 | E1006 | User could not approved. |
 | E1007 | Email for successfully activation could not generated. |
 | E1008 | It's not possible to add a portfolio. |
+| E1009 | It's not possible to add a position to the portfolio. |
 | U1000 | Insert a new user. |
 | U1001 | Approve user. |
 | U1002 | Approved user get a mail. |
 | M1000 | Update email_queue job. |
 | P1000 | Add a portfolio for an user. |
+| P1001 | Add a portfolio position. |
+| W1000 | The downloader job already exists and is disabled. |
+| W1001 | The downloader job already exists and is enabled. No further action. |
+| D1400 | New downloader created. |
+| D1401 | Downloader job will be updated from old to new value. |
+| D1402 | Downloader job will be enabled. |
+| D1403 | Downloader job will be disabled. |
