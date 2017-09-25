@@ -16,8 +16,12 @@ CREATE VIEW `v_portfolio` AS
         `pp`.`value2` as `pp_value2`,
         `pp`.`quantity` AS `pp_quantity`,
         `pp`.`price` AS `pp_price`,
+        `pp`.`sell` AS `pp_sell`,
+        `pp`.`buy` AS `pp_buy`,
+        `pp`.`delete` AS `pp_delete`,
         (`pp`.`price` * `pp`.`quantity`) AS `pp_investment`,
         `e`.`exchange_name` AS `pp_exchange`,
+        `e`.`idexchange` AS `pp_idexchange`,
         `u`.`username` AS `username`
     FROM
         ((`portfolio_head` `ph`

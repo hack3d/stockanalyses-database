@@ -3,7 +3,7 @@ DROP procedure IF EXISTS `sp_insert_portfolio_pos`;
 
 DELIMITER $$
 USE `stockanalyses_prod`$$
-CREATE PROCEDURE `sp_insert_portfolio_pos` (OUT sp_result int, IN sp_portfolio_head_id int, IN sp_base varchar(4), IN sp_quote varchar(4), IN sp_unit_price decimal(15,5), IN sp_quantity int, IN sp_exchange int, IN sp_user varchar(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_portfolio_pos`(OUT sp_result int, IN sp_portfolio_head_id int, IN sp_base varchar(4), IN sp_quote varchar(4), IN sp_unit_price decimal(15,5), IN sp_quantity int, IN sp_exchange int, IN sp_sell int, IN sp_buy int, IN sp_sell_price decimal(15,5), IN sp_buy_price decimal(15,5), IN sp_user varchar(255))
 BEGIN
     -- ------------------------------------------------------------
     -- ------------------------------------------------------------
@@ -35,8 +35,8 @@ BEGIN
                 code = RETURNED_SQLSTATE, msg = MESSAGE_TEXT;
         END;
 
-	insert into portfolio_pos (`id_portfolio_head`, `key1`, `value1`, `key2`, `value2`, `quantity`, `price`, `exchange`, `insert_timestamp`, `insert_user`, `modify_timestamp`, `modify_user`)
-    values (sp_portfolio_head_id, 'base', sp_base, 'quote', sp_quote, sp_quantity, sp_unit_price, sp_exchange, now(), sp_user, now(), sp_user);
+	insert into portfolio_pos (`id_portfolio_head`, `key1`, `value1`, `key2`, `value2`, `quantity`, `price`, `exchange`, `sell`, `buy`, `sell_price`, `sp_buy_price`, `insert_timestamp`, `insert_user`, `modify_timestamp`, `modify_user`)
+  values (sp_portfolio_head_id, 'base', sp_base, 'quote', sp_quote, sp_quantity, sp_unit_price, sp_exchange, sp_sell, sp_buy, sp_sell_price, sp_buy_price, now(), sp_user, now(), sp_user);
 
 	-- check whether the insert was successful
     IF code = '00000' THEN
