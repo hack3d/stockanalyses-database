@@ -33,7 +33,7 @@ REPLACE INTO `bonds` VALUES
 (8,'Ethereum Classic/US-Dollar','XFC000000008',0,now(),'admin',now(),'admin'),
 (9,'Recovery Right Token/US-Dollar','XFC000000009',0,now(),'admin',now(),'admin'),
 (10,'Recovery Right Token/Bitcoin','XFC000000010',0,now(),'admin',now(),'admin'),
-(11,'Zcash/US-Dollar','XFC000000011',0,nnow(),'admin',now(),'admin'),
+(11,'Zcash/US-Dollar','XFC000000011',0,now(),'admin',now(),'admin'),
 (12,'Zcash/Bitcoin','XFC000000012',0,now(),'admin',now(),'admin'),
 (13,'Monero/US-Dollar','XFC000000013',0,now(),'admin',now(),'admin'),
 (14,'Moneroe/Bitcoin','XFC000000014',0,now(),'admin',now(),'admin'),
