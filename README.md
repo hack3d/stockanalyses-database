@@ -72,6 +72,5 @@ Possible codes at the logging table 'log':
 | V1002 | Start event tracking. |
 | V1003 | End event tracking. |
 
-
 ## Versioning
-On production we will be use flyway in version 5.0.3 for database migration from development stage to production.
+I can't find a solution that fits our needs for database migration and versioning we will do it by hand.
