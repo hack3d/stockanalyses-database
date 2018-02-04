@@ -22,7 +22,7 @@ General: Every recognition starts with a letter. This letter specify a job.
 | TS | Trading Strategy |
 | U | Users |
 | P | Portfoliomanagement |
-| V | MySQL Eventscheduler |
+| V | MySQL Eventscheduler / Cron |
 | X | Exchange |
 
 
@@ -53,6 +53,7 @@ Possible codes at the logging table 'log':
 | E1010 | State for indicator job could not be updated. |
 | E1011 | Could not insert trend for indicator. |
 | E1012 | Could not insert one minute aggregated data. |
+| E1013 | Something went wrong with the transaction. |
 | T1000 | Add trend for specific indicator. |
 | TS1000 | Add new result from indicator to trading strategy. |
 | U1000 | Insert a new user. |
