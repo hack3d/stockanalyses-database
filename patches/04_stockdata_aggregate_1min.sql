@@ -69,6 +69,7 @@ BEGIN
 	    END IF;
 
 		  -- get start date for bond and exchange pair
+      START TRANSACTION;
 		  set v_start_date = (select `insert_timestamp` from `bonds_current` where `aggregated` = 0 and `bonds_idbonds` = v_bond and `exchanges_idexchanges` = v_exchange limit 1);
 
       -- get high, low and volume data
@@ -109,7 +110,6 @@ BEGIN
       and `insert_timestamp` between v_start_date and DATE_ADD(v_start_date, INTERVAL 1 MINUTE);
 
       -- all data collected
-      START TRANSACTION;
       update `bonds_current` set `aggregated` = 1, `modify_timestamp` = now(), `modify_user` = 'EVENT_stockdata_one_minute'
       where 1=1
       and `bonds_idbonds` = v_bond
